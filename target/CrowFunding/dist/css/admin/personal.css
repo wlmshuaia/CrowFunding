@@ -1,0 +1,14 @@
+
+.one-obj {
+}
+
+.one-obj li {
+    margin-bottom: 20px;
+}
+
+.tool-bar {
+    margin-top: -5px;
+}
+.tool-bar .btn {
+    padding: 6px 10px;
+}

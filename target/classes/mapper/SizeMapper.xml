@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tide.dao.SizeMapper" >
+  <resultMap id="BaseResultMap" type="com.tide.bean.Size" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="sizename" property="sizename" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from zc_size
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tide.bean.Size" >
+    insert into zc_size (id, sizename)
+    values (#{id,jdbcType=INTEGER}, #{sizename,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.tide.bean.Size" >
+    update zc_size
+    set sizename = #{sizename,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, sizename
+    from zc_size
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, sizename
+    from zc_size
+  </select>
+  <select id="getSizename" resultType="java.lang.String">
+    select sizename
+    from zc_size
+    where id = #{id, jdbcType=INTEGER}
+  </select>
+</mapper>

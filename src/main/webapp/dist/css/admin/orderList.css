@@ -1,0 +1,6 @@
+
+#p-express .form-control ,
+#p-trackno .form-control {
+    display: inline-block;
+    width: 60%;
+}

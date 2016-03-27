@@ -1,0 +1,98 @@
+
+/* 公共属性修改 */
+.align-center {
+    margin-top: 0.6rem;
+}
+
+/* 评论列表样式 */
+.am-comment-main {
+    /*margin-left: 2rem;*/
+    border: none;
+}
+.am-comment-main:before,
+.am-comment-main:after {
+    display: none;
+}
+
+.am-comment-hd {
+    background: #fff;
+    border-bottom: none;
+}
+.am-comment-hd a {
+    font-weight:normal;
+    color: #000;
+}
+.am-comment-hd .am-comment-meta {
+    padding: 0.5rem 0;
+}
+
+.am-comment-bd {
+    padding: 0.5rem 0;
+    color: rgb(159, 159, 159);
+}
+.zan-con {
+    color: rgb(155, 160, 197);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.zan-con div {
+    display: inline-block;
+}
+.zan-con .zan-num {
+    margin: 0.2rem 0.2rem 0 0;
+}
+.zan-con .zan,
+.zan-con .zan-success {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-size: contain!important;
+}
+.zan-con .zan {
+    background: url("../../imgs/icon_zan.png") center no-repeat;
+}
+.zan-con .zan-success {
+    background: url("../../imgs/icon_zan_success.png") center no-repeat;
+}
+
+.next-step {
+
+}
+.next-step .btn-my-submit {
+    margin: 5px auto!important;
+    display: block!important;
+}
+
+/* 弹出层样式 */
+.layermmain .section {
+    position: relative;
+    vertical-align: middle!important;
+}
+.layermmain .section .layermchild {
+    background: #fff;
+}
+.layermmain .section .layermbtn {
+    border: none;
+}
+.layermmain .section .layermbtn:before {
+    background: none;
+}
+.layermmain .section span {
+    margin-left: 10px;
+    margin-right: 10px;
+    bottom: 0.8rem;
+    padding: 0;
+    border-radius: 8px!important;
+    font-size: 1.8rem;
+    color: #fff;
+    height: 35px!important;
+    line-height: 35px;
+    width: 6rem;
+}
+.layermmain .section span[type='0'] {
+    background: rgb(243, 163, 83)!important;
+}
+.layermmain .section span[type='1'] {
+    color: rgb(175, 171, 167)!important;
+}
+
+

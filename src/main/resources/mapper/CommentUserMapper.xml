@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tide.dao.CommentUserMapper" >
+  <resultMap id="BaseResultMap" type="com.tide.bean.CommentUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="commentid" property="commentid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from zc_comment_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tide.bean.CommentUser" >
+    insert into zc_comment_user (id, commentid, userid
+      )
+    values (#{id,jdbcType=INTEGER}, #{commentid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.tide.bean.CommentUser" >
+    update zc_comment_user
+    set commentid = #{commentid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, commentid, userid
+    from zc_comment_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, commentid, userid
+    from zc_comment_user
+  </select>
+
+  <delete id="deleteCommentUser" parameterType="java.lang.Integer">
+    delete from zc_comment_user
+    where commentid = #{0} and userid = #{1}
+  </delete>
+  <select id="getCommentUser" resultMap="BaseResultMap">
+    select id, commentid, userid
+    from zc_comment_user
+    where commentid = #{0,jdbcType=INTEGER} and userid = #{1}
+  </select>
+
+</mapper>

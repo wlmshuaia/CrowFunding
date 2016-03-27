@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tide.dao.OrderDesignMapper" >
+  <resultMap id="BaseResultMap" type="com.tide.bean.OrderDesign" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="tradeno" property="tradeno" jdbcType="VARCHAR" />
+    <result column="designimg" property="designimg" jdbcType="VARCHAR" />
+    <result column="productid" property="productid" jdbcType="INTEGER" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="size" property="size" jdbcType="VARCHAR" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from zc_order_design
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tide.bean.OrderDesign" >
+    insert into zc_order_design (id, tradeno, designimg, 
+      productid, color, size, 
+      num)
+    values (#{id,jdbcType=INTEGER}, #{tradeno,jdbcType=VARCHAR}, #{designimg,jdbcType=VARCHAR}, 
+      #{productid,jdbcType=INTEGER}, #{color,jdbcType=VARCHAR}, #{size,jdbcType=VARCHAR}, 
+      #{num,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.tide.bean.OrderDesign" >
+    update zc_order_design
+    set tradeno = #{tradeno,jdbcType=VARCHAR},
+      designimg = #{designimg,jdbcType=VARCHAR},
+      productid = #{productid,jdbcType=INTEGER},
+      color = #{color,jdbcType=VARCHAR},
+      size = #{size,jdbcType=VARCHAR},
+      num = #{num,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, tradeno, designimg, productid, color, size, num
+    from zc_order_design
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, tradeno, designimg, productid, color, size, num
+    from zc_order_design
+  </select>
+
+  <delete id="deleteByTradeNo" parameterType="java.lang.String">
+    delete from zc_order_design
+    where tradeno = #{tradeno}
+  </delete>
+
+</mapper>

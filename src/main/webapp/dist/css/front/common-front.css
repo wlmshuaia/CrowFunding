@@ -1,0 +1,497 @@
+/**
+ * 前端公共样式
+ */
+html {
+    -webkit-text-size-adjust: none;
+    /*font-size: 10px;*/
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+a.am-btn-primary:visited,a.am-btn-danger:visited,a.am-btn-warning:visited,a.am-btn-secondary:visited,a.am-btn-success:visited{
+    color:#fff;
+}
+
+/* 缓冲动画 */
+.my-loader {
+    margin: 4rem auto;
+}
+.my-loader i {
+    font-size: 5rem;
+}
+
+/* 加载更多样式 */
+#wrapper {
+    position: absolute;
+    top: 49px;
+    bottom: 49px;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    /*padding: 0 8px;*/
+    /*background-color: #f8f8f8;*/
+}
+
+.am-list {
+    margin: 0;
+}
+
+.am-list > li {
+    background: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 加载更多 */
+.my-loader-more {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    color: #999;
+}
+.my-loader-more .am-icon-spin {
+}
+
+/* 滚动到顶部 */
+.scrollToTop {
+    position: absolute;
+    right: 10px;
+    bottom: 55px;
+    z-index: 100;
+}
+
+/* 底部工具栏 */
+.footer .am-navbar-label {
+    color: rgb(155, 155, 155);
+}
+.icon {
+    vertical-align: middle;
+    margin: 4px auto 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("../../imgs/icons.png") no-repeat;
+    background-size: 425%;
+}
+.icon-home {
+    background-position: 0px 0px;
+}
+.icon-home-choose {
+    background-position: -25px 0px;
+}
+.icon-theme {
+    background-position: 1px -24px;
+}
+.icon-theme-choose {
+    background-position: -24px -24px;
+}
+.icon-add {
+    background-position: 1px -49px;
+}
+.icon-designer {
+    background-position: 1px -73px;
+}
+.icon-designer-choose {
+    background-position: -25px -73px;
+}
+.icon-personal {
+    background-position: 1px -98px;
+}
+.icon-personal-choose {
+    background-position: -25px -98px;
+}
+
+.icon-home-choose,
+.icon-theme-choose,
+.icon-designer-choose,
+.icon-personal-choose{
+    color: rgb(238, 162, 88);
+}
+
+/* 主题内容区 */
+.main {
+    position: relative;
+}
+
+@media screen and (min-width: 740px) {
+    body {
+        width: 736px!important;
+        margin: 0 auto;
+        border: #ddd 1px solid;
+    }
+}
+
+/* 底部栏 */
+.am-header-default,
+.am-navbar-default .am-navbar-nav {
+    background: #fff !important;
+}
+
+/*.am-header-default a,*/
+.am-navbar-default a {
+    color: #000 !important;
+}
+
+.footer {
+    border-top: #ddd 1px solid;
+}
+@media screen and (min-width: 740px) {
+    .footer {
+        width: 736px!important;
+        margin: 0 auto;
+        left: auto;
+        right: auto;
+        border: #ddd 1px solid;
+    }
+}
+
+.footer .am-navbar-label {
+    margin-top: 2px;
+}
+
+/* 项目类型 */
+.project-type {
+
+}
+.project-type ul {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+.project-type ul li {
+    display: inline-block;
+    text-align: center;
+    margin-left: 10px;
+}
+.project-type ul li div {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+}
+
+/* 服装类 */
+.project-type .cloth {
+    background: rgb(241, 162, 82);
+}
+/* 公益类 */
+.project-type .commonweal {
+    background: #72d1d1;
+}
+.project-type .cloth img,
+.project-type .commonweal img {
+    width: 25px;
+    height: 25px;
+    margin: 25% auto;
+}
+
+/* 公共模块 */
+/* 主题容器 */
+.one-con {
+    padding: 0 10px;
+    background: #fff;
+}
+
+/* 主题头部 */
+.con-header {
+    line-height: 40px;
+}
+
+.con-header span {
+    display: inline-block;
+}
+
+.con-header .h4 {
+    font-weight: normal;
+    display: inline-block;
+}
+
+.one-con .left {
+    float: left;
+    width: 25%;
+}
+
+.one-con .right {
+    float: right;
+}
+
+.one-con .line {
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+    border: black 1px solid;
+}
+
+/* 项目信息 */
+.one-con .p-con .p-info .title {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.4rem;
+}
+.p-info ul {
+    font-size: 1.2rem;
+}
+
+/* 单个项目容器 */
+.p-con {
+    width: 100%;
+    /*width: 46vw;*/
+    overflow: hidden;
+    position: relative;
+}
+.p-con .p-img {
+    width: 100%;
+    /*height: 46vw;*/
+    background: #9E9D9D;
+}
+.p-con .p-img a {
+    width: 100%;
+    height: 46vw;
+    display: block;
+    overflow: hidden;
+}
+.p-con .p-img img {
+    width: 100%;
+    /*height: 46vw;*/
+}
+
+.p-con .p-info {
+    color: rgb(147, 147, 147);
+    font-size: 1.4rem;
+}
+.p-con .p-info .title,
+.p-con .p-info .title a {
+    color: #000;
+}
+
+/* 关注图标 */
+.over-con,
+.over-con-on {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    -webkit-background-size:contain!important;
+    background-size:contain!important;
+}
+@media screen and (min-width: 414px) {
+    .over-con,
+    .over-con-on {
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+.over-con {
+    background: url("../../../dist/imgs/icon_like.png") center no-repeat;
+}
+
+.over-con-on {
+    background: url("../../../dist/imgs/icon_like_success.png") center no-repeat;
+}
+
+
+/* 轮播图样式 */
+.am-slider .am-slides img {
+    height: 20rem;
+}
+.am-control-paging {
+    bottom: 1rem!important;
+}
+.am-slider-default .am-control-nav li a {
+    width: 0.8rem!important;
+    height: 0.8rem!important;
+}
+.am-control-paging .am-active {
+    background-color: #fff!important;
+}
+
+/* 进度条 */
+.progress {
+    background: #fff !important;
+    height: 0.5rem !important;
+    margin: 0.5rem 0 !important;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    border-radius: 0.8rem !important;
+    box-shadow: none !important;
+    border: #ddd 1px solid;
+    position: relative;
+}
+
+.progress .am-progress-bar {
+    box-shadow: none;
+    position: absolute;
+    height: 5px;
+    top: -1px;
+    left: -1px;
+    /*border-radius: 2px 0 0 2px;*/
+    border-radius: 2px;
+}
+
+.progress .am-progress-bar-warning {
+    background: rgb(243, 163, 83);
+}
+
+/* 按钮 */
+.btn-my,
+.btn-my-cancel {
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    color: white!important;
+
+    border: none;
+}
+.btn-my i,
+.btn-my span {
+    font-weight: normal;
+}
+
+.btn-my:hover,
+.btn-my-cancel:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-my,
+.btn-my:hover {
+    background: rgb(241, 162, 82);
+}
+
+.btn-my-cancel,
+.btn-my-cancel:hover {
+    background: gray;
+}
+
+/* a 标签的样式 */
+.a {
+    padding: 0.6rem 2.5rem;
+}
+.btm-my:active {
+    color: black;
+}
+
+.btm-my:active,
+.btn-my:hover {
+    text-decoration: none;
+}
+
+/* 左浮动 */
+.left {
+    display: inline-block;
+    float: left;
+}
+
+/* 右浮动 */
+.right {
+    display: inline-block;
+    float: right;
+}
+
+.align-right {
+    float: right;
+    margin-top: 6px;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.un-display {
+    display: none;
+}
+.display {
+    display: block;
+}
+.display-in-block{
+    display: inline-block;
+}
+
+/* 下一步 */
+.next-step {
+    background: #fff;
+    line-height: 49px;
+    border-top: #ddd 1px solid;
+}
+
+.next-step img {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
+.next-step .btn-my-submit {
+    margin-left: 15%;
+    display: inline-block !important;
+    background: rgb(241, 162, 82);
+    color: white;
+    width: 50%;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.8rem;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: none;
+}
+.next-step .cancel {
+    background: gray;
+}
+
+.next-step .right {
+    line-height: 49px;
+}
+
+/* 成功 */
+.p-gray {
+    color: rgb(155, 155, 155);
+    margin: 2rem 0;
+    font-size: 1.6rem;
+}
+.arrow-left {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    color: rgb(155, 155, 155);
+}
+.h-80 {
+    height: 80%;
+}
+/* 暂无项目 */
+.no-projects {
+    margin-top: 2rem;
+}
+
+/* tips消息提示框样式 */
+.layermmain .section {
+    vertical-align: bottom!important;
+    width: 100%;
+    position: fixed;
+    bottom: 55px;
+}
+.layermcont {
+    padding: 10px 15px!important;
+}
+

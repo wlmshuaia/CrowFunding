@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tide.dao.CommentMapper" >
+  <resultMap id="BaseResultMap" type="com.tide.bean.Comment" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="projectid" property="projectid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="releasedate" property="releasedate" jdbcType="VARCHAR" />
+    <result column="likenum" property="likenum" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from zc_comment
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByProjectId" parameterType="java.lang.Integer" >
+    delete from zc_comment
+    where projectid = #{projectid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tide.bean.Comment" >
+    insert into zc_comment (id, projectid, userid, 
+      releasedate, likenum, status, 
+      content)
+    values (#{id,jdbcType=INTEGER}, #{projectid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+      #{releasedate,jdbcType=VARCHAR}, #{likenum,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.tide.bean.Comment" >
+    update zc_comment
+    set projectid = #{projectid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      releasedate = #{releasedate,jdbcType=VARCHAR},
+      likenum = #{likenum,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, projectid, userid, releasedate, likenum, status, content
+    from zc_comment
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, projectid, userid, releasedate, likenum, status, content
+    from zc_comment
+  </select>
+  <select id="getCommentByStatus" resultMap="BaseResultMap">
+    select id, projectid, userid, releasedate, likenum, status, content
+    from zc_comment
+    where status = #{status}
+  </select>
+  <update id="setCommonStatus" parameterType="java.lang.Integer">
+    update zc_comment
+    set status = #{1}
+    where id = #{0}
+  </update>
+
+  <select id="getCount" resultType="java.lang.Integer">
+    select count(*)
+    from zc_comment
+  </select>
+
+  <select id="getCommentCountByIdAndStatus" resultType="java.lang.Integer">
+    select count(*)
+    from zc_comment
+    where projectid = #{0} and status = #{1}
+  </select>
+
+  <select id="getCommentsByIdAndStatus" resultMap="BaseResultMap">
+    select id, projectid, userid, releasedate, likenum, status, content
+    from zc_comment
+    where projectid = #{0} and status = #{1}
+  </select>
+
+</mapper>

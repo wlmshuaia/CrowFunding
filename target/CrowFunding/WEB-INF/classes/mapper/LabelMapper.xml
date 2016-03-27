@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tide.dao.LabelMapper" >
+  <resultMap id="BaseResultMap" type="com.tide.bean.Label" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="labelname" property="labelname" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from zc_label
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tide.bean.Label" >
+    insert into zc_label (id, labelname, type, 
+      status)
+    values (#{id,jdbcType=INTEGER}, #{labelname,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.tide.bean.Label" >
+    update zc_label
+    set labelname = #{labelname,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, labelname, type, status
+    from zc_label
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, labelname, type, status
+    from zc_label
+  </select>
+  <select id="selectAllDisplay" resultMap="BaseResultMap" >
+    select id, labelname, type, status
+    from zc_label
+    where type = '0' and status = '1'
+  </select>
+
+  <select id="getCount" resultType="java.lang.Integer">
+    select count(*)
+    from zc_label
+  </select>
+
+  <select id="getLabelName" resultType="java.lang.String">
+    select labelname
+    from zc_label
+    where id = #{id}
+  </select>
+
+</mapper>

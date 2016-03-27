@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tide.dao.ProjectMapper" >
+  <resultMap id="BaseResultMap" type="com.tide.bean.Project" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="projectno" property="projectno" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="targetnum" property="targetnum" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="releasedate" property="releasedate" jdbcType="VARCHAR" />
+    <result column="enddate" property="enddate" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="backernum" property="backernum" jdbcType="INTEGER" />
+    <result column="fundnum" property="fundnum" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="intro" property="intro" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from zc_project
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <!-- 返回插入数据后的主键 -->
+  <insert id="insert" parameterType="com.tide.bean.Project" keyProperty="id" useGeneratedKeys="true">
+    insert into zc_project (id, projectno, title,
+      targetnum, userid, releasedate, 
+      enddate, status, backernum, 
+      fundnum, type, intro
+      )
+    values (#{id,jdbcType=INTEGER}, #{projectno,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{targetnum,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{releasedate,jdbcType=VARCHAR}, 
+      #{enddate,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{backernum,jdbcType=INTEGER}, 
+      #{fundnum,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{intro,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.tide.bean.Project" >
+    update zc_project
+    set projectno = #{projectno,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      targetnum = #{targetnum,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      releasedate = #{releasedate,jdbcType=VARCHAR},
+      enddate = #{enddate,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      backernum = #{backernum,jdbcType=INTEGER},
+      fundnum = #{fundnum,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      intro = #{intro,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, projectno, title, targetnum, userid, releasedate, enddate, status, backernum, 
+    fundnum, type, intro
+    from zc_project
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, projectno, title, targetnum, userid, releasedate, enddate, status, backernum, 
+    fundnum, type, intro
+    from zc_project
+    ORDER BY id DESC
+  </select>
+
+
+
+
+  <select id="getProjectByStatus" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select id, projectno, title,  targetnum, userid, releasedate, enddate,
+    status, backernum, fundnum, type, intro
+    from zc_project
+    where status = #{status}
+    ORDER BY releasedate desc
+  </select>
+  <select id="getCount" resultType="java.lang.Integer">
+    select count(*)
+    from zc_project
+  </select>
+  <select id="getProjectByUid" resultMap="BaseResultMap">
+    select id, projectno, title,  targetnum, userid, releasedate, enddate,
+    status, backernum, fundnum, type, intro
+    from zc_project
+    where userid = #{uid} and status != 0 and status != 2
+    ORDER BY releasedate desc
+  </select>
+  <select id="getProjectAddByStatus" resultMap="BaseResultMap">
+    select id, projectno, title,  targetnum, userid, releasedate, enddate,
+    status, backernum, fundnum, type, intro
+    from zc_project
+    where userid = #{0} and status = #{1}
+    ORDER BY releasedate desc
+  </select>
+  <select id="getProjectStatus" resultType="java.lang.Integer">
+    select status
+    from zc_project
+    where id = #{id}
+  </select>
+  <select id="getProjectNum" resultType="java.lang.Integer">
+    select count(*)
+    from zc_project
+    WHERE userid = #{userid} and status != 0 and status != 2
+  </select>
+  <select id="getProjectIdsByUserid" resultType="java.lang.Integer">
+    select id
+    from zc_project
+    where userid = #{userid}
+  </select>
+  <select id="getProjectByBackNumDesc" resultMap="BaseResultMap">
+    select id, projectno, title,  targetnum, userid, releasedate, enddate,
+    status, backernum, fundnum, type, intro
+    from zc_project
+    ORDER BY backernum desc
+  </select>
+  <select id="getProjectBySearch" resultMap="BaseResultMap">
+    select id, projectno, title,  targetnum, userid, releasedate, enddate,
+    status, backernum, fundnum, type, intro
+    from zc_project
+    where title like CONCAT('%',#{content},'%') or intro like CONCAT('%',#{content},'%')
+    and status != 0 and status != 2
+    ORDER BY releasedate desc
+  </select>
+  <select id="getProjectDisplay" resultMap="BaseResultMap">
+    select id, projectno, title,  targetnum, userid, releasedate, enddate,
+    status, backernum, fundnum, type, intro
+    from zc_project
+    where status != 0 and status != 2
+    ORDER BY releasedate desc
+  </select>
+  <select id="getProjectByBackNumDescDisplay" resultMap="BaseResultMap">
+    select id, projectno, title,  targetnum, userid, releasedate, enddate,
+    status, backernum, fundnum, type, intro
+    from zc_project
+    where status != 0 and status != 2
+    ORDER BY backernum desc
+  </select>
+  <select id="getProjectByType" resultMap="BaseResultMap">
+    select id, projectno, title,  targetnum, userid, releasedate, enddate,
+    status, backernum, fundnum, type, intro
+    from zc_project
+    where type = #{type}
+    ORDER BY id desc
+  </select>
+</mapper>

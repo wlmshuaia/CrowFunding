@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'siyuan-light';
+    src: url('../../fonts/siyuan-light/webfont.eot'); /* IE9*/
+    src: url('../../fonts/siyuan-light/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/siyuan-light/webfont.woff') format('woff'), /* chrome、firefox */ url('../../fonts/siyuan-light/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../../fonts/siyuan-light/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'siyuan-light', serif;
+    font-color: #6d6d6d;
+}
+
+body {
+    padding-bottom: 40px;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px 10px;
+    margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+/* 思源黑体-细 */
+.siyuan-light {
+    font-family: "siyuan-light" !important;
+    width: 80%;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.login-container {
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.h2 {
+    color: #779aa8;
+    font-size: 28px;
+    width: 100%;
+    position: relative;
+    animation: myfirst 2s;
+    -webkit-animation: myfirst 2s; /* Safari and Chrome */
+}
+
+@keyframes myfirst {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    10% { /* Rotate div */
+        transform: rotate(20deg);
+        -ms-transform: rotate(20deg); /* IE 9 */
+        -webkit-transform: rotate(20deg); /* Safari and Chrome */
+    }
+    20% { /* Rotate div */
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari and Chrome */
+    }
+    35% { /* Rotate div */
+        transform: rotate(10deg);
+        -ms-transform: rotate(10deg); /* IE 9 */
+        -webkit-transform: rotate(10deg); /* Safari and Chrome */
+    }
+    100% { /* Rotate div */
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari and Chrome */
+    }
+}
+
+.btn-login {
+    text-align: center;
+}
+
+.btn-login button {
+    background: #779aa8;
+    padding: 5px 70px;
+    color: white;
+    border-radius: 40px;
+}
+
+.btn-login button:hover {
+    color: white;
+}
+
+.form-group {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form-group input {
+    width: 80%;
+    display: inline-block;
+}

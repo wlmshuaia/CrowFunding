@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tide.dao.ProductSizetableMapper" >
+  <resultMap id="BaseResultMap" type="com.tide.bean.ProductSizetable" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="productid" property="productid" jdbcType="INTEGER" />
+    <result column="sizetable" property="sizetable" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from zc_product_sizetable
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tide.bean.ProductSizetable" >
+    insert into zc_product_sizetable (id, productid, sizetable
+      )
+    values (#{id,jdbcType=INTEGER}, #{productid,jdbcType=INTEGER}, #{sizetable,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.tide.bean.ProductSizetable" >
+    update zc_product_sizetable
+    set productid = #{productid,jdbcType=INTEGER},
+      sizetable = #{sizetable,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, productid, sizetable
+    from zc_product_sizetable
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, productid, sizetable
+    from zc_product_sizetable
+  </select>
+  <select id="getObjSizetables" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select id, productid, sizetable
+    from zc_product_sizetable
+    where productid = #{productid}
+  </select>
+
+  <delete id="deleteByProductId">
+    delete from zc_product_sizetable
+    where productid = #{productid}
+  </delete>
+
+</mapper>

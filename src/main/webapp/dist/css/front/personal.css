@@ -1,0 +1,117 @@
+/* 头部选项卡: 我发布的, 我支持的, 我关注的 */
+.personal-header {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+.personal-header ul {
+    padding: 0;
+}
+
+.personal-header li {
+    padding: 0;
+    display: inline-block;
+}
+
+.personal-header span {
+    padding: 0.4rem 0.2rem;
+}
+
+.personal-header .f-active {
+    border-bottom: 0.4rem solid rgb(243, 163, 83);
+}
+
+/* 内容 */
+.personal-content {
+
+}
+.personal-content .p-obj {
+    text-align: center;
+    display: none;
+}
+.personal-content .t-header,
+.personal-content .p-header {
+    width: auto;
+    border-radius: 0.4rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    border: #ddd 1px solid;
+    font-size: 1.4rem;
+    /*display: none;*/
+}
+.personal-content .t-header .am-thumbnails {
+    margin: 0;
+}
+.personal-content .t-header .am-thumbnails li ,
+.personal-content .p-header .am-thumbnails li {
+    width: auto!important;
+    padding: 0.2rem 1.6rem;
+    color: rgb(147, 147, 147);
+    text-align: center;
+    line-height: 1.4;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    white-space: nowrap;
+    background-image: none;
+    border-radius: 0;
+    cursor: pointer;
+    outline: 0;
+    transition: background-color .3s ease-out,border-color .3s ease-out;
+    border-right: #ddd 1px solid;
+}
+.personal-content .t-header .am-thumbnails li:last-child,
+.personal-content .p-header .am-thumbnails li:last-child {
+    border: none;
+}
+
+.personal-content .p-header .am-btn {
+    display: block;
+    padding: 0.2rem 0.4rem;
+}
+.personal-content .p-header .am-btn:active {
+    background: #fff;
+}
+.personal-content .s-active {
+    color: rgb(243, 163, 83)!important;
+}
+.personal-content .t-active {
+    background: rgb(243, 163, 83);
+    color: #fff!important;
+}
+
+/* 内容区 */
+.personal-content .p-con-box {
+    margin: 1rem 0;
+    padding: 0 1rem;
+    display: none;
+}
+.personal-content .p-con-box li {
+    /*animation: backChange 1s;*/
+    /*-webkit-animation: backChange 1s;*/
+}
+@keyframes backChange {
+    from {
+        /*background: red;*/
+        opacity: 0;
+    }
+    to {
+        /*background: yellow;*/
+        opacity: 1;
+    }
+}
+.personal-content .p-con-box li img {
+    /*width: 100%;*/
+}
+/* 我关注的容器 */
+.personal-content .p-obj-box {
+    display: none;
+}
+
+
+
