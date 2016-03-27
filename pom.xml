@@ -281,14 +281,9 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <!--Deploy to server-->
-          <!--<url>http://localhost:8080/manager/text</url>-->
-          <!--<url>http://121.40.109.160/manager/text</url>-->
-          <url>http://120.26.127.124/manager/text</url>
-          <!--<url>http://120.27.182.82/manager/text</url>-->
           <server>Tomcat</server>
           <username>admin</username>
-          <password>9103a2b9ba</password>
+          <password></password>
           <path>/CrowFunding</path>
         </configuration>
       </plugin>
