@@ -283,7 +283,7 @@
         <configuration>
           <server>Tomcat</server>
           <username>admin</username>
-          <password></password>
+          <password>admin</password>
           <path>/CrowFunding</path>
         </configuration>
       </plugin>
