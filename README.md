@@ -4,3 +4,4 @@
 接入微信支付<br>
 使用开源框架：spring + springmvc + mybatis， amazeui, bootstrap<br>
 maven 构建
+注：涉及公司机密的相关配置未上传
